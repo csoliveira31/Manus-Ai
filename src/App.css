@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 1.1rem;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  padding: 1.5rem 2rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-content {
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* Weather Card */
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.temperature {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.temp-max {
+  font-size: 3rem;
+  color: #ff6b35;
+}
+
+.temp-separator {
+  font-size: 2rem;
+  color: #999;
+}
+
+.temp-min {
+  font-size: 2rem;
+  color: #4a90e2;
+}
+
+.weather-condition {
+  flex: 1;
+}
+
+.weather-condition strong {
+  font-size: 1.3rem;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.weather-condition p {
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.no-rain {
+  color: #28a745 !important;
+  font-weight: 600;
+}
+
+/* Transport Card */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-normal {
+  background-color: #28a745;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+.transport-details p {
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Quotes Card */
+.quotes-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.quote-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.quote-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.currency-flag {
+  font-size: 1.5rem;
+}
+
+.currency-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.quote-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.quote-change {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.quote-change.positive {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.quote-change.negative {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+/* Reminder Card */
+.reminder-card h3 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.checklist-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.checklist-item input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checklist-item input[type="checkbox"]:checked + .checkmark {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.checklist-item input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.app-footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .weather-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .temperature {
+    align-self: center;
+  }
+  
+  .card-content {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  
+  .quote-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .temp-max {
+    font-size: 2.5rem;
+  }
+  
+  .temp-min {
+    font-size: 1.8rem;
+  }
+  
+  .temp-separator {
+    font-size: 1.8rem;
+  }
+}
+
