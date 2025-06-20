@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Diário - São Paulo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .weather-icon {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+        }
+
+        .transport-icon {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+        }
+
+        .finance-icon {
+            background: linear-gradient(135deg, #00b894, #00a085);
+        }
+
+        .reminder-icon {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+
+        .card h2 {
+            color: #2d3436;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .temperature {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e17055;
+        }
+
+        .weather-desc {
+            color: #636e72;
+            font-size: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #636e72;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #2d3436;
+            font-weight: 600;
+        }
+
+        .status-good {
+            color: #00b894;
+        }
+
+        .status-warning {
+            color: #fdcb6e;
+        }
+
+        .status-alert {
+            color: #e17055;
+        }
+
+        .reminder-list {
+            list-style: none;
+        }
+
+        .reminder-list li {
+            padding: 8px 0;
+            color: #2d3436;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .reminder-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00b894;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 30px;
+        }
+
+        .last-update {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard Diário</h1>
+            <p>Informações essenciais para o seu dia em São Paulo</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Previsão do Tempo -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon weather-icon">☀️</div>
+                    <h2>Previsão do Tempo</h2>
+                </div>
+                <div class="weather-info">
+                    <div class="temperature">25°C</div>
+                    <div class="weather-desc">Sol com algumas nuvens</div>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Temperatura Mínima:</span>
+                    <span class="info-value">15°C</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Temperatura Máxima:</span>
+                    <span class="info-value">27°C</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Possibilidade de Chuva:</span>
+                    <span class="info-value status-good">0%</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Vento:</span>
+                    <span class="info-value">NW - 7km/h</span>
+                </div>
+            </div>
+
+            <!-- Transporte Público -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon transport-icon">🚇</div>
+                    <h2>Transporte Público</h2>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Metrô - Linhas 1-Azul e 3-Vermelha:</span>
+                    <span class="info-value status-good">Funcionamento Normal</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">CPTM:</span>
+                    <span class="info-value status-good">Funcionamento Normal</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status Geral:</span>
+                    <span class="info-value status-good">Sem paralisações ou greves</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Última Atualização:</span>
+                    <span class="info-value">Hoje, 20/06/2025</span>
+                </div>
+            </div>
+
+            <!-- Cotações -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon finance-icon">💰</div>
+                    <h2>Cotações</h2>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Dólar (USD):</span>
+                    <span class="info-value">R$ 5,49</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Euro (EUR):</span>
+                    <span class="info-value">R$ 6,31</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Bitcoin (BTC):</span>
+                    <span class="info-value">R$ 579.477,50</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Variação Dólar:</span>
+                    <span class="info-value status-good">+0,03%</span>
+                </div>
+            </div>
+
+            <!-- Lembrete -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon reminder-icon">📝</div>
+                    <h2>Lembrete - Escola</h2>
+                </div>
+                <ul class="reminder-list">
+                    <li>Preparar a bolsa escolar</li>
+                    <li>Separar o uniforme/roupa</li>
+                    <li>Verificar material escolar</li>
+                    <li>Preparar lanche (se necessário)</li>
+                    <li>Conferir agenda/recados</li>
+                    <li>Verificar horário das aulas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="last-update">
+            <strong>Última atualização:</strong> 20 de junho de 2025, 08:00
+        </div>
+
+        <div class="footer">
+            <p>Dashboard criado automaticamente • Informações atualizadas em tempo real</p>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar animação de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+
+        // Atualizar horário
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('pt-BR');
+            document.querySelector('.last-update strong').nextSibling.textContent = ` ${timeString}`;
+        }
+
+        // Atualizar a cada minuto
+        setInterval(updateTime, 60000);
+    </script>
+</body>
+</html>
+
