@@ -1,0 +1,13 @@
+Situação das linhas de trem e metrô de São Paulo (Direto dos Trens - 29/06/2025 11:00):
+
+Linha 1-Azul: Operação Normal
+Linha 2-Verde: Operação Normal
+Linha 3-Vermelha: Operação Normal
+Linha 4-Amarela: Operação Normal
+Linha 5-Lilás: Operação Normal
+Linha 7-Rubi: Operação Normal
+Linha 8-Diamante: Atividade Programada - Devido à manutenção programada, os trens da Linha 8-Diamante circulam com maiores intervalos entre as estações Júlio Prestes e Itapevi.
+Linha 9-Esmeralda: Atividade Programada - Devido à manutenção programada, os trens da Linha 9-Esmeralda circulam com maiores intervalos entre as estações Bruno Covas-Mendes/Vila Natal e Osasco.
+Linha 10-Turquesa: Operação Normal
+
+
