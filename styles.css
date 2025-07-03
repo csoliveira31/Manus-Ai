@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header h1 i {
+    margin-right: 15px;
+    color: #ffd700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.last-update {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-header h2 i {
+    margin-right: 10px;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+/* Weather Card Styles */
+.weather-card .card-header {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.temperature {
+    text-align: center;
+}
+
+.temp-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0984e3;
+    display: block;
+}
+
+.temp-range {
+    color: #666;
+    font-size: 1rem;
+}
+
+.weather-details {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.weather-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.weather-item i {
+    color: #0984e3;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.weather-alert {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.weather-alert i {
+    color: #f39c12;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Transport Card Styles */
+.transport-card .card-header {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+}
+
+.transport-status {
+    margin-bottom: 25px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.status-normal {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-item i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.status-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+.transport-news h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.transport-news ul {
+    list-style: none;
+}
+
+.transport-news li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #00b894;
+}
+
+.transport-news li i {
+    color: #00b894;
+    margin-right: 10px;
+    width: 16px;
+}
+
+/* Quotes Card Styles */
+.quotes-card .card-header {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.quote-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+}
+
+.quote-item:hover {
+    transform: scale(1.05);
+}
+
+.quote-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: 600;
+}
+
+.quote-header i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.quote-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.quote-change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.quote-change i {
+    margin-right: 5px;
+}
+
+.quote-change.positive {
+    color: #00b894;
+}
+
+.quote-change.negative {
+    color: #e17055;
+}
+
+/* Reminder Card Styles */
+.reminder-card .card-header {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+.reminder-content h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.checklist-item:hover {
+    background: #e9ecef;
+}
+
+.checklist-item input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6c5ce7;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.checklist-item input[type="checkbox"]:checked + .checkmark {
+    background: #6c5ce7;
+    border-color: #6c5ce7;
+}
+
+.checklist-item input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.checklist-item input[type="checkbox"]:checked ~ span:last-child {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .weather-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .weather-details {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    .quotes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .temp-value {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-content {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+

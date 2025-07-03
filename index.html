@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Informações - São Paulo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-chart-line"></i> Dashboard São Paulo</h1>
+            <p class="subtitle">Informações atualizadas para o seu dia</p>
+            <div class="last-update">
+                Última atualização: <span id="lastUpdate"></span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Seção Previsão do Tempo -->
+            <section class="card weather-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-cloud-sun"></i> Previsão do Tempo - São Paulo</h2>
+                </div>
+                <div class="card-content">
+                    <div class="weather-info">
+                        <div class="temperature">
+                            <span class="temp-value">14°C</span>
+                            <span class="temp-range">11°C - 14°C</span>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <i class="fas fa-cloud-rain"></i>
+                                <span>Chuvoso durante o dia e à noite</span>
+                            </div>
+                            <div class="weather-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Probabilidade de chuva: 96%</span>
+                            </div>
+                            <div class="weather-item">
+                                <i class="fas fa-wind"></i>
+                                <span>Vento: SSE - 11km/h</span>
+                            </div>
+                            <div class="weather-item">
+                                <i class="fas fa-eye"></i>
+                                <span>Umidade: Alta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weather-alert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Atenção: Dia frio e chuvoso. Leve guarda-chuva e agasalho!</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Transporte Público -->
+            <section class="card transport-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-subway"></i> Transporte Público - São Paulo</h2>
+                </div>
+                <div class="card-content">
+                    <div class="transport-status">
+                        <div class="status-item status-normal">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Operação Normal</span>
+                        </div>
+                        <p class="status-description">
+                            Não há greves ou paralisações programadas para hoje. As linhas de metrô e CPTM estão operando normalmente.
+                        </p>
+                    </div>
+                    
+                    <div class="transport-news">
+                        <h3>Últimas Notícias:</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                Greve da CPTM foi suspensa (26/03/2025)
+                            </li>
+                            <li>
+                                <i class="fas fa-tools"></i>
+                                Falhas pontuais podem ocorrer - acompanhe o Direto do Metrô
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                Horário de pico: maior movimento entre 7h-9h e 17h-19h
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Cotações -->
+            <section class="card quotes-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-chart-line"></i> Cotações</h2>
+                </div>
+                <div class="card-content">
+                    <div class="quotes-grid">
+                        <div class="quote-item">
+                            <div class="quote-header">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Dólar (USD)</span>
+                            </div>
+                            <div class="quote-value">R$ 5,42</div>
+                            <div class="quote-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                -0,65%
+                            </div>
+                        </div>
+                        
+                        <div class="quote-item">
+                            <div class="quote-header">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Euro (EUR)</span>
+                            </div>
+                            <div class="quote-value">R$ 6,40</div>
+                            <div class="quote-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                -0,53%
+                            </div>
+                        </div>
+                        
+                        <div class="quote-item">
+                            <div class="quote-header">
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Bitcoin (BTC)</span>
+                            </div>
+                            <div class="quote-value">R$ 594.974</div>
+                            <div class="quote-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                +1,24%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Lembrete -->
+            <section class="card reminder-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-bell"></i> Lembrete Escolar</h2>
+                </div>
+                <div class="card-content">
+                    <div class="reminder-content">
+                        <h3>Checklist para a escola da sua filha:</h3>
+                        <div class="checklist">
+                            <label class="checklist-item">
+                                <input type="checkbox" id="bag">
+                                <span class="checkmark"></span>
+                                <span>Arrumar a bolsa escolar</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="clothes">
+                                <span class="checkmark"></span>
+                                <span>Separar a roupa (lembre-se: está frio hoje!)</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="lunch">
+                                <span class="checkmark"></span>
+                                <span>Preparar o lanche</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="materials">
+                                <span class="checkmark"></span>
+                                <span>Verificar materiais escolares</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="umbrella">
+                                <span class="checkmark"></span>
+                                <span>Colocar guarda-chuva na bolsa (96% chance de chuva)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Dashboard São Paulo - Informações atualizadas automaticamente</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
